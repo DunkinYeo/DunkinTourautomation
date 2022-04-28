@@ -40,7 +40,7 @@ public class HeaderPage {
             //Search a Tour by title
             WebElement btnSearch = driver.findElement(By.className("search-button"));
             btnSearch.click();
-            WebElement inputSearch = driver.fi ndElement(By.xpath("/html/body/div[1]/div/div[1]/div[2]/div/a[2]"));
+            WebElement inputSearch = driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[2]/div/a[2]"));
             inputSearch.sendKeys(keyword);
             inputSearch.sendKeys(Keys.RETURN);
         } catch (Exception e) {
