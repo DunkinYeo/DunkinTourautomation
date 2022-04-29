@@ -36,12 +36,12 @@ public class TourViewerTest extends TestBase {
 
             HeaderPage header = new HeaderPage();
             //Thread.sleep(3000);
-            header.searchTour(driver, "Case5 IOS");
+            header.searchTour(driver, "For Public Automation Testing");
 
             Thread.sleep(3000);
 
             SearchResultPage search = new SearchResultPage();
-            WebElement tour = search.getTourByTitle(driver, "Case5 IOS");
+            WebElement tour = search.getTourByTitle(driver, "For Public Automation Testing");
             tour.click();
             Thread.sleep(5000);
 
@@ -50,7 +50,7 @@ public class TourViewerTest extends TestBase {
 
             TourViewerPage tourView = new TourViewerPage();
             System.out.println(tourView.getPageTitle(driver));
-            assertTrue(tourView.getPageTitle(driver).contains("Case5 IOS"));
+            assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
             //More asserts to be added below
 
         } catch (Exception e) {
@@ -77,12 +77,12 @@ public class TourViewerTest extends TestBase {
 
                 HeaderPage header = new HeaderPage();
                 //Thread.sleep(3000);
-                header.searchTour2(driver, "80 Points 12pro 2D");
+                header.searchTour2(driver, "For Private Automation Testing");
 
                 Thread.sleep(3000);
 
                 SearchResultPage search = new SearchResultPage();
-                WebElement tour = search.getTourByTitle(driver, "80 Points 12pro 2D");
+                WebElement tour = search.getTourByTitle(driver, "For Private Automation Testing");
                 tour.click();
                 Thread.sleep(5000);
 
@@ -91,7 +91,7 @@ public class TourViewerTest extends TestBase {
 
                 TourViewerPage tourView = new TourViewerPage();
                 System.out.println(tourView.getPageTitle(driver));
-                assertTrue(tourView.getPageTitle(driver).contains("80 Points 12pro 2D"));
+                assertTrue(tourView.getPageTitle(driver).contains("For Private Automation Testing"));
                 //More asserts to be added below
 
             }
