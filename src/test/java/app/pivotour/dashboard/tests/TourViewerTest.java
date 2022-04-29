@@ -5,8 +5,10 @@ import app.pivotour.dashboard.pages.HeaderPage;
 import app.pivotour.dashboard.pages.LoginPage;
 import app.pivotour.dashboard.pages.SearchResultPage;
 import app.pivotour.dashboard.pages.TourViewerPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.FindElement;
 import org.testng.annotations.Test;
 
 import static app.pivotour.dashboard.library.ThreadSafeWebDriverStorage.getDriver;
@@ -18,7 +20,7 @@ import static org.testng.Assert.*;
 
 public class TourViewerTest extends TestBase {
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"GG"})
     public void verifyTourViewerUI() {
         WebDriver driver = getDriver();
         //Go to Tour frontpage (login)
@@ -30,14 +32,16 @@ public class TourViewerTest extends TestBase {
             LoginPage login = new LoginPage();
             login.clickLogin(driver);
 
+            Thread.sleep(3000);
+
             HeaderPage header = new HeaderPage();
             //Thread.sleep(3000);
-            header.searchTour(driver, "iphone 13 2D 10p");
+            header.searchTour(driver, "Case5 IOS");
 
             Thread.sleep(3000);
 
             SearchResultPage search = new SearchResultPage();
-            WebElement tour = search.getTourByTitle(driver, "iphone 13 2D 10p");
+            WebElement tour = search.getTourByTitle(driver, "Case5 IOS");
             tour.click();
             Thread.sleep(5000);
 
@@ -46,7 +50,7 @@ public class TourViewerTest extends TestBase {
 
             TourViewerPage tourView = new TourViewerPage();
             System.out.println(tourView.getPageTitle(driver));
-            assertTrue(tourView.getPageTitle(driver).contains("iphone 13 2D 10p"));
+            assertTrue(tourView.getPageTitle(driver).contains("Case5 IOS"));
             //More asserts to be added below
 
         } catch (Exception e) {
@@ -58,7 +62,7 @@ public class TourViewerTest extends TestBase {
     public static class TourViewerTest2 extends TestBase {
 
         @Test(groups = {"GG"})
-        public void                                verifyTourViewerUI2() {
+        public void  verifyTourViewerUI2() {
             WebDriver driver = getDriver();
             //Go to Tour frontpage (login)
             //driver.get(config.getString("BASEURL"));
@@ -68,6 +72,8 @@ public class TourViewerTest extends TestBase {
                 //Input Email, Password and Click on Login button
                 LoginPage login = new LoginPage();
                 login.clickLogin(driver);
+
+                Thread.sleep(3000);
 
                 HeaderPage header = new HeaderPage();
                 //Thread.sleep(3000);
@@ -88,7 +94,8 @@ public class TourViewerTest extends TestBase {
                 assertTrue(tourView.getPageTitle(driver).contains("80 Points 12pro 2D"));
                 //More asserts to be added below
 
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 e.printStackTrace(System.out);
                 fail("Test Case Failed!");
             }

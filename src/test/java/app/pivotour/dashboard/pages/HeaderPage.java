@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.fail;
 
 public class HeaderPage {
-    
+
+
     public String getPageTitle(WebDriver driver) {
         return driver.getTitle();
     }
@@ -19,6 +20,9 @@ public class HeaderPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
             //Search a Tour by title
+
+
+
             WebElement btnSearch = driver.findElement(By.className("search-button"));
             btnSearch.click();
             WebElement inputSearch = driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]"));
@@ -34,13 +38,16 @@ public class HeaderPage {
     }
 
 
+
     public void searchTour2(WebDriver driver, String keyword) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
             //Search a Tour by title
+
+           driver.findElement(By.className("container")).click();
             WebElement btnSearch = driver.findElement(By.className("search-button"));
             btnSearch.click();
-            WebElement inputSearch = driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[2]/div/a[2]"));
+            WebElement inputSearch = driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]"));
             inputSearch.sendKeys(keyword);
             inputSearch.sendKeys(Keys.RETURN);
         } catch (Exception e) {

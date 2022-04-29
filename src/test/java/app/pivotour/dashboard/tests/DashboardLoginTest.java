@@ -56,7 +56,7 @@ public class DashboardLoginTest extends TestBase {
 
     public static class GoogleLogin extends TestBase {
 
-        @Test(groups={"GG"})
+        @Test(groups={"smoke"})
         public void VerifyGoogleLogin() {
           WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -83,7 +83,7 @@ public class DashboardLoginTest extends TestBase {
 
     public static class FacebookLogin extends TestBase {
 
-        @Test(groups={"GG"})
+        @Test(groups={"smoke"})
         public void VerifyFacebookLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -111,7 +111,7 @@ public class DashboardLoginTest extends TestBase {
 
     public static class AppleLogin extends TestBase {
 
-        @Test(groups={"GG"})
+        @Test(groups={"smoke"})
         public void VerifyAppleLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
