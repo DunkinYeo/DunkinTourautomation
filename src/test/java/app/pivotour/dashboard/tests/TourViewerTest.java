@@ -1,10 +1,7 @@
 package app.pivotour.dashboard.tests;
 
 import app.pivotour.dashboard.library.TestBase;
-import app.pivotour.dashboard.pages.HeaderPage;
-import app.pivotour.dashboard.pages.LoginPage;
-import app.pivotour.dashboard.pages.SearchResultPage;
-import app.pivotour.dashboard.pages.TourViewerPage;
+import app.pivotour.dashboard.pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
 
 public class TourViewerTest extends TestBase {
+
 
     @Test(groups = {"GG"})
     public void verifyTourViewerUI() {
@@ -51,7 +49,15 @@ public class TourViewerTest extends TestBase {
             TourViewerPage tourView = new TourViewerPage();
             System.out.println(tourView.getPageTitle(driver));
             assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
+
+            Thread.sleep(3000);
+
+            assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
+
+            System.out.println("For Public Automation Testing");
+
             //More asserts to be added below
+
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -59,7 +65,8 @@ public class TourViewerTest extends TestBase {
         }
     }
 
-    public static class TourViewerTest2 extends TestBase {
+
+
 
         @Test(groups = {"GG"})
         public void  verifyTourViewerUI2() {
@@ -103,4 +110,3 @@ public class TourViewerTest extends TestBase {
 
 
     }
-}

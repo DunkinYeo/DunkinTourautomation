@@ -54,7 +54,7 @@ public class DashboardLoginTest extends TestBase {
         }
     }
 
-    public static class GoogleLogin extends TestBase {
+
 
         @Test(groups={"smoke"})
         public void VerifyGoogleLogin() {
@@ -79,9 +79,9 @@ public class DashboardLoginTest extends TestBase {
                 fail();
             }
         }
-    }
 
-    public static class FacebookLogin extends TestBase {
+
+
 
         @Test(groups={"smoke"})
         public void VerifyFacebookLogin() {
@@ -107,14 +107,14 @@ public class DashboardLoginTest extends TestBase {
                 fail();
             }
         }
-    }
 
-    public static class AppleLogin extends TestBase {
 
-        @Test(groups={"smoke"})
+
+
+        @Test(groups = {"smoke"})
         public void VerifyAppleLogin() {
             WebDriver driver = getDriver();
-            WebDriverWait wait=new WebDriverWait(driver, 10);
+            WebDriverWait wait = new WebDriverWait(driver, 10);
 
             //Go to Tour frontpage (login)
             //driver.get(config.getString("BASEURL"));
@@ -127,7 +127,7 @@ public class DashboardLoginTest extends TestBase {
                 login.Alogin(driver);
                 Thread.sleep(3000);
 
-                ArrayList<String> pops = new ArrayList<> (driver.getWindowHandles());
+                ArrayList<String> pops = new ArrayList<>(driver.getWindowHandles());
                 driver.switchTo().window(pops.get(1));
 
                 Thread.sleep(1000);
@@ -136,5 +136,5 @@ public class DashboardLoginTest extends TestBase {
                 fail();
             }
         }
+
     }
-}
