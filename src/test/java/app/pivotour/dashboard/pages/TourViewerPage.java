@@ -9,4 +9,7 @@ public class TourViewerPage {
         return driver.getTitle();
     }
 
-}
+    public String getPageSource(WebDriver driver) {return driver.getPageSource();}
+
+    }
+

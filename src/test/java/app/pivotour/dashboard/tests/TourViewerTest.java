@@ -52,10 +52,12 @@ public class TourViewerTest extends TestBase {
 
             Thread.sleep(3000);
 
-            assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
 
-            System.out.println("For Public Automation Testing");
+            ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(tabs2.get(1));
 
+            System.out.println(tourView.getPageSource(driver));
+            assertTrue(tourView.getPageSource(driver).contains("For Public Automation Testing"));
             //More asserts to be added below
 
 
@@ -100,6 +102,16 @@ public class TourViewerTest extends TestBase {
                 System.out.println(tourView.getPageTitle(driver));
                 assertTrue(tourView.getPageTitle(driver).contains("For Private Automation Testing"));
                 //More asserts to be added below
+
+
+                Thread.sleep(3000);
+
+                ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
+                driver.switchTo().window(tabs2.get(1));
+
+                System.out.println(tourView.getPageSource(driver));
+                assertTrue(tourView.getPageSource(driver).contains("For Private Automation Testing"));
+
 
             }
             catch (Exception e) {
