@@ -66,7 +66,7 @@ public class TourViewerTest extends TestBase {
             driver.switchTo().window(tabs3.get(1));
 
             System.out.println(tourView.getPageSource(driver));
-            assertFalse(tourView.getPageSource(driver).contains("For public Automation Testing"));
+            assertTrue(tourView.getPageSource(driver).contains("For public Automation Testing"));
 
             Thread.sleep(3000);
 
