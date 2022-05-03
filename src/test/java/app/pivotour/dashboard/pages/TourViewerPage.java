@@ -11,7 +11,12 @@ public class TourViewerPage {
         return driver.getTitle();
     }
 
+
     public String getPageSource(WebDriver driver) {
+
+        return driver.findElement(By.className("tour-name")).getText();
+    }
+        public String getPageSource2(WebDriver driver) {
 
         return driver.findElement(By.className("tour-name")).getText();
 
