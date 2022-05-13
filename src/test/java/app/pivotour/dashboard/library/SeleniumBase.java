@@ -4,6 +4,7 @@ import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -24,22 +25,55 @@ public class SeleniumBase {
 
     public void openBrowser() throws MalformedURLException {
         String browser = config.getString("BROWSER");
-        String baseurl = config.getString("BASEURL");
+        String chromedriverwin = config.getString("CHROMEDRIVERWIN");
+        String chromedrivermac = config.getString("CHROMEDRIVERMAC");
+        String ffdriverwin = config.getString("FFDRIVERWIN");
+        String ffdrivermac = config.getString("FFDRIVERMAC");
+
+        String targetEnv = System.getProperty("environment");
+        String baseurl = null;
+        if (targetEnv != null) {
+            if (targetEnv.contains("DEV")) {
+                baseurl = config.getString("BASEURLDEV");
+            } else if (targetEnv.contains("STAG")) {
+                baseurl = config.getString("BASEURLSTAG");
+            } else if (targetEnv.contains("LIVE")) {
+                baseurl = config.getString("BASEURLLIVE");
+            } else {
+                baseurl = config.getString("BASEURLLIVE");
+            }
+        } else {
+            baseurl = config.getString("BASEURLLIVE");
+        }
+
+        String osType = System.getProperty("os.name").toLowerCase();
+        String chromedriver = null;
+        String ffdriver = null;
+        if (osType.contains("mac")) {
+            chromedriver = chromedrivermac;
+            ffdriver = ffdrivermac;
+        } else if (osType.contains("win")) {
+            chromedriver = chromedriverwin;
+            ffdriver = ffdriverwin;
+        }
+
         /* Local Mode*/
         switch (browser) {
             case "CH": //Chrome
-                System.setProperty("webdriver.chrome.driver", "/Users/3i-21-270/chromedriver");
+                System.setProperty("webdriver.chrome.driver", chromedriver);
                 driver = new ChromeDriver();
                 break;
             case "IE":
                 //driver = new InternetExplorerDriver();
                 break;
             case "FF":
-                //driver = new FirefoxDriver();
+                System.setProperty("webdriver.gecko.driver", ffdriver);
+                driver = new FirefoxDriver();
                 break;
         }
 
         driver.get(baseurl);
+        driver.manage().window().maximize();
     }
 
     public void closeBrowser() {
