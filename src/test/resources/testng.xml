@@ -7,9 +7,9 @@
         <groups>
             <run>
                 <include name="abstract" />
-                <exclude name="GG" />
-                <exclude name="smoke"/>
-                <exclude name="ST"/>
+                <include name="GG" />
+                <include name="smoke"/>
+                <include name="ST"/>
                 <include name="PF"/>
                 <exclude name="grid" />
             </run>
