@@ -21,7 +21,7 @@ public class ProfileTest extends TestBase {
 
     @Test(groups = {"PF"})
 
-    public void Profile() {
+    public void OpenProfile() {
         WebDriver driver = getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
@@ -39,6 +39,85 @@ public class ProfileTest extends TestBase {
             assertEquals(header.getPageTitle(driver), "Pivo Tour Dashboard");
             //Check Public Tour Page loaded
             Thread.sleep(3000);
+
+
+            PublicTourPage OpenProfile = new PublicTourPage();
+            OpenProfile.OpenProfile(driver);
+
+
+            //PrivateTourPage PrivateTour = new PrivateTourPage();
+            //assertTrue(PrivateTour.getPageTitle(driver).contains("Private Tour"));
+
+            //PrivateTourpage PrivateTour = new PrivateTourpage();
+            //assertTrue(PrivateTour.getPageTitle(driver).contains("Private Tour"));
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            fail();
+        }
+    }
+
+    @Test(groups = {"PF"})
+
+    public void ManageAccount () {
+        WebDriver driver = getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        //Go to Tour frontpage (login)
+        //driver.get(config.getString("BASEURL"));
+        //Page loding timeout (10s)
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        try {
+            //Input Email, Password and Click on Login button
+            LoginPage login = new LoginPage();
+            login.clickLogin(driver);
+            //Check Title
+            HeaderPage header = new HeaderPage();
+            assertEquals(header.getPageTitle(driver), "Pivo Tour Dashboard");
+            //Check Public Tour Page loaded
+            Thread.sleep(3000);
+
+
+            PublicTourPage ManageAccount = new PublicTourPage();
+            ManageAccount.ManageAccount(driver);
+
+
+            //PrivateTourPage PrivateTour = new PrivateTourPage();
+            //assertTrue(PrivateTour.getPageTitle(driver).contains("Private Tour"));
+
+            //PrivateTourpage PrivateTour = new PrivateTourpage();
+            //assertTrue(PrivateTour.getPageTitle(driver).contains("Private Tour"));
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            fail();
+        }
+    }
+
+    @Test(groups = {"PF"})
+    public void LogOut () {
+        WebDriver driver = getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        //Go to Tour frontpage (login)
+        //driver.get(config.getString("BASEURL"));
+        //Page loding timeout (10s)
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        try {
+            //Input Email, Password and Click on Login button
+            LoginPage login = new LoginPage();
+            login.clickLogin(driver);
+            //Check Title
+            HeaderPage header = new HeaderPage();
+            assertEquals(header.getPageTitle(driver), "Pivo Tour Dashboard");
+            //Check Public Tour Page loaded
+            Thread.sleep(3000);
+
+
+            PublicTourPage LogOut = new PublicTourPage();
+            LogOut.LogOut(driver);
 
 
             //PrivateTourPage PrivateTour = new PrivateTourPage();

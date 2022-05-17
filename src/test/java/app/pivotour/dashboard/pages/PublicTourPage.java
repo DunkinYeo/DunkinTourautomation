@@ -39,5 +39,40 @@ public class PublicTourPage   {
 
         Thread.sleep(3000);
     }
+
+    public void OpenProfile(WebDriver driver) throws Exception{
+
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div/div[3]/div[1]/span/div/img")).click();
+
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("/html/body/ul/a[1]/li")).click();
+
+        Thread.sleep(3000);
+
+
+    }
+    public void ManageAccount(WebDriver driver) throws Exception{
+
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div/div[3]/div[1]/span/div/img")).click();
+
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("/html/body/ul/a[2]/li")).click();
+
+        Thread.sleep(3000);
+    }
+    public void LogOut(WebDriver driver) throws Exception{
+
+
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div/div[3]/div[1]/span/div/img")).click();
+
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("/html/body/ul/li")).click();
+
+        Thread.sleep(3000);
+
+    }
 }
 
