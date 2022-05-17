@@ -57,4 +57,23 @@ public class HeaderPage {
 
     }
 
-}
+    public void Profile(WebDriver driver, String keyword){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        try {
+            //Search a Tour by title
+
+            driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div/div[3]/div[1]/span/div/img")).click();
+            WebElement btnSearch = driver.findElement(By.className("user-drawer__image"));
+            btnSearch.click();
+            WebElement inputSearch = driver.findElement(By.className("el-dropdown-menu__item"));
+            btnSearch.click();
+            inputSearch.sendKeys(keyword);
+            inputSearch.sendKeys(Keys.RETURN);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    }
+
