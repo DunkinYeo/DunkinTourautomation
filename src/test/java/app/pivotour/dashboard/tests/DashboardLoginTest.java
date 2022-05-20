@@ -20,10 +20,14 @@ import java.util.concurrent.TimeUnit;
 
 public class DashboardLoginTest extends TestBase {
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"debug"})
     public void VerifyLogin() {
         WebDriver driver = getDriver();
-        WebDriverWait wait=new WebDriverWait(driver, 10);
+        if (driver == null) {
+            System.out.println("DRIVER IS NULL");
+            return;
+        }
+        //WebDriverWait wait=new WebDriverWait(driver, 10);
 
         //Go to Tour frontpage (login)
         //driver.get(config.getString("BASEURL"));
@@ -83,7 +87,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups={"smoke", "login"})
+        @Test(groups={"smoke"})
         public void VerifyFacebookLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
