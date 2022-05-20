@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DashboardLoginTest extends TestBase {
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"debug"})
     public void VerifyLogin() {
         WebDriver driver = getDriver();
         WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -83,7 +83,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups={"smoke", "login"})
+        @Test(groups={"smoke"})
         public void VerifyFacebookLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);

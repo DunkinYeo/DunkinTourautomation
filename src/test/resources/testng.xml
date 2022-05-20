@@ -7,10 +7,11 @@
         <groups>
             <run>
                 <include name="abstract" />
-                <include name="GG" />
-                <include name="smoke"/>
-                <include name="ST"/>
-                <include name="PF"/>
+                <exclude name="GG" />
+                <exclude name="smoke"/>
+                <include name="debug"/>
+                <exclude name="ST"/>
+                <exclude name="PF"/>
                 <exclude name="grid" />
             </run>
         </groups>
