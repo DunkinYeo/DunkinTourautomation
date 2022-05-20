@@ -11,7 +11,7 @@
                 <include name="smoke"/>
                 <include name="ST"/>
                 <include name="PF"/>
-                <include name="VD,ST"/>
+                <include name="VD"/>
                 <exclude name="grid" />
             </run>
         </groups>
