@@ -23,7 +23,7 @@ public class DashboardLoginTest extends TestBase {
     @Test(groups = {"debug"})
     public void VerifyLogin() {
         WebDriver driver = getDriver();
-        WebDriverWait wait=new WebDriverWait(driver, 10);
+        //WebDriverWait wait=new WebDriverWait(driver, 10);
 
         //Go to Tour frontpage (login)
         //driver.get(config.getString("BASEURL"));
