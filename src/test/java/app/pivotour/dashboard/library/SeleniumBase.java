@@ -61,6 +61,8 @@ public class SeleniumBase {
         switch (browser) {
             case "CH": //Chrome
                 System.setProperty("webdriver.chrome.driver", chromedriver);
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--lang=" + "en-US");
                 driver = new ChromeDriver();
                 break;
             case "IE":

@@ -44,8 +44,8 @@ public class DashboardLoginTest extends TestBase {
             assertEquals(header.getPageTitle(driver), "Pivo Tour Dashboard");
             //Check Public Tour Page loaded
             PublicTourPage publicTour = new PublicTourPage();
-            //assertTrue(publicTour.getPageTitle(driver).contains("Public Tour"));
-            assertEquals(publicTour.getPageTitle(driver), "Public Tour");
+            assertTrue(publicTour.getPageTitle(driver).contains("Public Tour"));
+            //assertEquals(publicTour.getPageTitle(driver), "Public Tour");
 
             //PrivateTourPage PrivateTour = new PrivateTourPage();
             //assertTrue(PrivateTour.getPageTitle(driver).contains("Private Tour"));
