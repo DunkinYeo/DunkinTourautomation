@@ -11,6 +11,7 @@ public class PublicTourPage   {
 
     public String getPageTitle(WebDriver driver)  {
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //return driver.findElement(By.className("custom-header__title")).getText();
         return driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[2]/div[1]/div[1]/div[1]")).getText();
