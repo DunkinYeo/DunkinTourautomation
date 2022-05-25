@@ -38,7 +38,7 @@ public class DashboardLoginTest extends TestBase {
             //Input Email, Password and Click on Login button
             LoginPage login = new LoginPage();
             login.clickLogin(driver);
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             //Check Title
             HeaderPage header = new HeaderPage();
             assertEquals(header.getPageTitle(driver), "Pivo Tour Dashboard");
