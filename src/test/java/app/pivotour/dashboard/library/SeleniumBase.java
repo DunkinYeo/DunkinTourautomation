@@ -31,7 +31,7 @@ public class SeleniumBase {
         String ffdrivermac = config.getString("FFDRIVERMAC");
 
         String targetEnv = System.getProperty("environment");
-        String baseurl = null;
+        String baseurl = "https://tour.pivo.app/";
         if (targetEnv != null) {
             if (targetEnv.contains("DEV")) {
                 baseurl = config.getString("BASEURLDEV");
