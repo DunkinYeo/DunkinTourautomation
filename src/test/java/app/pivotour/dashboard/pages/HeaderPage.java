@@ -20,9 +20,6 @@ public class HeaderPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
             //Search a Tour by title
-
-
-
             WebElement btnSearch = driver.findElement(By.className("search-button"));
             btnSearch.click();
             WebElement inputSearch = driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]"));
@@ -30,7 +27,6 @@ public class HeaderPage {
             inputSearch.sendKeys(Keys.RETURN);
         } catch (Exception e) {
             e.printStackTrace();
-
             fail();
         }
 
@@ -43,8 +39,7 @@ public class HeaderPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
             //Search a Tour by title
-
-           driver.findElement(By.className("container")).click();
+            driver.findElement(By.className("container")).click();
             WebElement btnSearch = driver.findElement(By.className("search-button"));
             btnSearch.click();
             WebElement inputSearch = driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]"));
@@ -61,7 +56,6 @@ public class HeaderPage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
             //Search a Tour by title
-
             driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div/div[3]/div[1]/span/div/img")).click();
             WebElement btnSearch = driver.findElement(By.className("user-drawer__image"));
             btnSearch.click();
@@ -75,5 +69,5 @@ public class HeaderPage {
         }
     }
 
-    }
+}
 

@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DashboardLoginTest extends TestBase {
 
-    @Test(groups = {"debug"})
+    @Test(groups = {"smoke", "login"})
     public void VerifyLogin() {
         WebDriver driver = getDriver();
         if (driver == null) {
@@ -63,7 +63,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups={"smoke"})
+        @Test(groups={"smoke", "login"})
         public void VerifyGoogleLogin() {
           WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -90,7 +90,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups={"smoke"})
+        @Test(groups={"smoke", "login"})
         public void VerifyFacebookLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -118,7 +118,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups = {"smoke"})
+        @Test(groups = {"smoke", "login"})
         public void VerifyAppleLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait = new WebDriverWait(driver, 10);
