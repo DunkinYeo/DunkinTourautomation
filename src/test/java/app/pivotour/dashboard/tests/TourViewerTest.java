@@ -41,10 +41,11 @@ public class TourViewerTest extends TestBase {
             tour.click();
             Thread.sleep(10000);
 
+            TourViewerPage tourView = new TourViewerPage();
+
             ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs.get(1));
 
-            TourViewerPage tourView = new TourViewerPage();
             String strTitle = tourView.getPageTitle(driver);
             System.out.println(strTitle);
             assertTrue(strTitle.contains("For Public Automation Testing"));
