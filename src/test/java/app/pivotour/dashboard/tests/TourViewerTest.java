@@ -18,7 +18,7 @@ import static org.testng.Assert.*;
 public class TourViewerTest extends TestBase {
 
 
-    @Test(groups = {"GG"})
+    @Test(groups = {"debug", "GG"})
     public void verifyTourViewerUI() {
         WebDriver driver = getDriver();
         //Go to Tour frontpage (login)
@@ -51,18 +51,16 @@ public class TourViewerTest extends TestBase {
             assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
 
             Thread.sleep(3000);
-
-
+/*
             ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs2.get(1));
-
-            System.out.println(tourView.getPageSource(driver));
-            assertTrue(tourView.getPageSource(driver).contains("For Public Automation Testing"));
+*/
+            String str = tourView.getPageSource(driver);
+            System.out.println(str);
+            assertTrue(str.contains("For Public Automation Testing"));
             //More asserts to be added below
 
             Thread.sleep(3000);
-
-
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -73,7 +71,7 @@ public class TourViewerTest extends TestBase {
 
 
 
-        @Test(groups = {"GG"})
+        @Test(groups = {"debug", "GG"})
         public void  verifyTourViewerUI2() {
             WebDriver driver = getDriver();
             //Go to Tour frontpage (login)
@@ -107,16 +105,15 @@ public class TourViewerTest extends TestBase {
                 //More asserts to be added below
 
                 Thread.sleep(3000);
-
+/*
                 ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
                 driver.switchTo().window(tabs2.get(1));
-
-                System.out.println(tourView.getPageSource2(driver));
-                assertTrue(tourView.getPageSource2(driver).contains("For Private Automation Testing"));
+*/
+                String str = tourView.getPageSource(driver);
+                System.out.println(str);
+                assertTrue(str.contains("For Private Automation Testing"));
 
                 Thread.sleep(3000);
-
-
 
             }
             catch (Exception e) {
