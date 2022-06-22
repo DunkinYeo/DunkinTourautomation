@@ -49,7 +49,7 @@ public class TourViewerTest extends TestBase {
             System.out.println(strTitle);
             assertTrue(strTitle.contains("For Public Automation Testing"));
 
-            Thread.sleep(3000);
+            Thread.sleep(5000);
 
             String strTourName = tourView.getPageSource(driver);
             System.out.println(strTourName);
@@ -65,7 +65,7 @@ public class TourViewerTest extends TestBase {
     }
 
 
-    @Test(groups = {"debug", "GG"})
+    @Test(groups = {"smoke", "GG"})
     public void  verifyTourViewerUI2() {
         WebDriver driver = getDriver();
         //Go to Tour frontpage (login)
