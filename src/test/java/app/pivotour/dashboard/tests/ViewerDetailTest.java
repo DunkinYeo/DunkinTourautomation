@@ -133,7 +133,7 @@ public class ViewerDetailTest extends TestBase {
         }
     }
 
-    @Test(groups = {"debug", "VD"})
+    @Test(groups = {"smoke", "VD"})
     public void SharingTourTest(){
 
         // /html/body/div[1]/div/section/main/div/div[5]/header/span[1]/span
