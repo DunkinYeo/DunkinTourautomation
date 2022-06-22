@@ -15,13 +15,13 @@ public class TourViewerPage {
 
     public String getPageSource(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return driver.findElement(By.className("tour-name")).getText();
+//        return driver.findElement(By.className("tour-name")).getText();
+        return driver.findElement(By.xpath("/html/body/div/div/section/header/div/div/div[1]/div[2]")).getText();
     }
 
     public String getPageSource2(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //return driver.findElement(By.className("tour-name")).getText();
-        return driver.findElement(By.xpath("/html/body/div/div/section/header/div/div/div[1]/div[2]")).getText();
+        return driver.findElement(By.className("tour-name")).getText();
     }
 
     public void FloorplanTest(WebDriver driver) throws Exception{
