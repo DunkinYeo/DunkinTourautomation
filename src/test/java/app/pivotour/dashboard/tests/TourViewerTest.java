@@ -39,7 +39,7 @@ public class TourViewerTest extends TestBase {
             SearchResultPage search = new SearchResultPage();
             WebElement tour = search.getTourByTitle(driver, "For Public Automation Testing");
             tour.click();
-            Thread.sleep(5000);
+            Thread.sleep(10000);
 
             ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs.get(1));
