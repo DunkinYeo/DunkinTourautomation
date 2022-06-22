@@ -39,18 +39,15 @@ public class TourViewerTest extends TestBase {
             SearchResultPage search = new SearchResultPage();
             WebElement tour = search.getTourByTitle(driver, "For Public Automation Testing");
             tour.click();
-            Thread.sleep(10000);
-
-            TourViewerPage tourView = new TourViewerPage();
+            Thread.sleep(30000);
 
             ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs.get(1));
 
+            TourViewerPage tourView = new TourViewerPage();
             String strTitle = tourView.getPageTitle(driver);
             System.out.println(strTitle);
             assertTrue(strTitle.contains("For Public Automation Testing"));
-
-            Thread.sleep(5000);
 
             String strTourName = tourView.getPageSource(driver);
             System.out.println(strTourName);
