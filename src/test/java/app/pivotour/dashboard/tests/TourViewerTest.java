@@ -2,16 +2,13 @@ package app.pivotour.dashboard.tests;
 
 import app.pivotour.dashboard.library.TestBase;
 import app.pivotour.dashboard.pages.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.server.handler.FindElement;
 import org.testng.annotations.Test;
 
 import static app.pivotour.dashboard.library.ThreadSafeWebDriverStorage.getDriver;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.*;
@@ -44,29 +41,19 @@ public class TourViewerTest extends TestBase {
             tour.click();
             Thread.sleep(5000);
 
-            //ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-            //driver.switchTo().window(tabs.get(1));
-            String currentHandle= driver.getWindowHandle();
-            Set<String> tabs = driver.getWindowHandles();
-            for(String actual: tabs) {
-                if (!actual.equalsIgnoreCase(currentHandle)) {
-                    //Switch to the opened tab
-                    driver.switchTo().window(actual);
-                }
-            }
+            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(1));
 
             TourViewerPage tourView = new TourViewerPage();
-            System.out.println(tourView.getPageTitle(driver));
-            assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
+            String strTitle = tourView.getPageTitle(driver);
+            System.out.println(strTitle);
+            assertTrue(strTitle.contains("For Public Automation Testing"));
 
             Thread.sleep(3000);
-/*
-            ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
-*/
-            String str = tourView.getPageSource(driver);
-            System.out.println(str);
-            assertTrue(str.contains("For Public Automation Testing"));
+
+            String strTourName = tourView.getPageSource(driver);
+            System.out.println(strTourName);
+            assertTrue(strTourName.contains("For Public Automation Testing"));
             //More asserts to be added below
 
             Thread.sleep(3000);
@@ -76,8 +63,6 @@ public class TourViewerTest extends TestBase {
             fail("Test Case Failed!");
         }
     }
-
-
 
 
     @Test(groups = {"debug", "GG"})
@@ -105,30 +90,20 @@ public class TourViewerTest extends TestBase {
             tour.click();
             Thread.sleep(5000);
 
-//            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-//            driver.switchTo().window(tabs.get(1));
-            String currentHandle= driver.getWindowHandle();
-            Set<String> tabs = driver.getWindowHandles();
-            for(String actual: tabs) {
-                if (!actual.equalsIgnoreCase(currentHandle)) {
-                    //Switch to the opened tab
-                    driver.switchTo().window(actual);
-                }
-            }
+            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(1));
 
             TourViewerPage tourView = new TourViewerPage();
-            System.out.println(tourView.getPageTitle(driver));
-            assertTrue(tourView.getPageTitle(driver).contains("For Private Automation Testing"));
+            String strTitle = tourView.getPageTitle(driver);
+            System.out.println(strTitle);
+            assertTrue(strTitle.contains("For Private Automation Testing"));
             //More asserts to be added below
 
             Thread.sleep(3000);
-/*
-            ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
-*/
-            String str = tourView.getPageSource(driver);
-            System.out.println(str);
-            assertTrue(str.contains("For Private Automation Testing"));
+
+            String strTourName = tourView.getPageSource(driver);
+            System.out.println(strTourName);
+            assertTrue(strTourName.contains("For Private Automation Testing"));
 
             Thread.sleep(3000);
 
