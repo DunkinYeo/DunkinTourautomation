@@ -15,8 +15,7 @@ import static org.testng.Assert.fail;
 
 public class ViewerDetailTest extends TestBase {
 
-    @Test(groups = {"VD"})
-
+    @Test(groups = {"smoke", "VD"})
     public void FloorplanTest(){
 
    // /html/body/div[1]/div/section/main/div/div[5]/header/span[1]/span
@@ -52,21 +51,21 @@ public class ViewerDetailTest extends TestBase {
         assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
 
         Thread.sleep(3000);
-
-
+/*
         ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
-
+*/
         System.out.println(tourView.getPageSource(driver));
         assertTrue(tourView.getPageSource(driver).contains("For Public Automation Testing"));
         //More asserts to be added below
 
         Thread.sleep(3000);
 
+        //TourViewerPage FloorplanTest = new TourViewerPage();
+        //FloorplanTest.FloorplanTest(driver);
+        tourView.FloorplanTest(driver);
 
-            TourViewerPage FloorplanTest = new TourViewerPage();
-            FloorplanTest.FloorplanTest(driver);
-
+        Thread.sleep(1000);
 
     } catch (Exception e) {
         e.printStackTrace(System.out);
@@ -74,7 +73,7 @@ public class ViewerDetailTest extends TestBase {
     }
 }
 
-    @Test(groups = {"VD"})
+    @Test(groups = {"smoke", "VD"})
     public void DollhouseTest(){
 
         // /html/body/div[1]/div/section/main/div/div[5]/header/span[1]/span
@@ -110,11 +109,10 @@ public class ViewerDetailTest extends TestBase {
             assertTrue(tourView.getPageTitle(driver).contains("For Public Automation Testing"));
 
             Thread.sleep(3000);
-
-
+/*
             ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs2.get(1));
-
+*/
             System.out.println(tourView.getPageSource(driver));
             assertTrue(tourView.getPageSource(driver).contains("For Public Automation Testing"));
             //More asserts to be added below
@@ -122,17 +120,20 @@ public class ViewerDetailTest extends TestBase {
             Thread.sleep(3000);
 
 
-            TourViewerPage DollhouseTest = new TourViewerPage();
-            DollhouseTest.DollhouseTest(driver);
+            //TourViewerPage DollhouseTest = new TourViewerPage();
+            //DollhouseTest.DollhouseTest(driver);
 
+            tourView.DollhouseTest(driver);
+
+            Thread.sleep(1000);
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
             fail("Test Case Failed!");
         }
     }
-    @Test(groups = {"VD"})
 
+    @Test(groups = {"debug", "VD"})
     public void SharingTourTest(){
 
         // /html/body/div[1]/div/section/main/div/div[5]/header/span[1]/span
@@ -169,10 +170,10 @@ public class ViewerDetailTest extends TestBase {
 
             Thread.sleep(3000);
 
-
+/*
             ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
             driver.switchTo().window(tabs2.get(1));
-
+*/
             System.out.println(tourView.getPageSource(driver));
             assertTrue(tourView.getPageSource(driver).contains("For Public Automation Testing"));
             //More asserts to be added below
@@ -180,10 +181,11 @@ public class ViewerDetailTest extends TestBase {
             Thread.sleep(3000);
 
 
-            TourViewerPage SharingTourTest = new TourViewerPage();
-            SharingTourTest.SharingTourTest(driver);
+            //TourViewerPage SharingTourTest = new TourViewerPage();
+            //SharingTourTest.SharingTourTest(driver);
+            tourView.SharingTourTest(driver);
 
-            Thread.sleep(3000);
+            Thread.sleep(2000);
 
         } catch (Exception e) {
             e.printStackTrace(System.out);

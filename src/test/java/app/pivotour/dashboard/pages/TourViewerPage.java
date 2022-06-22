@@ -45,10 +45,10 @@ public class TourViewerPage {
 
         driver.findElement(By.xpath("/html/body/div[1]/div/section/header/div/div/div[2]")).click();
         Thread.sleep(3000);
-
+/*
         ArrayList<String> pops = new ArrayList<> (driver.getWindowHandles());
         driver.switchTo().window(pops.get(1));
-
+*/
         driver.findElement(By.xpath("/html/body/div/div/div/main/div[3]/span[2]/span[1]/span[1]/span")).click();
         Thread.sleep(3000);
 
