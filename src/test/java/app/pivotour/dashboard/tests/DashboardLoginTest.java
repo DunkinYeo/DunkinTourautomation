@@ -90,7 +90,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-        @Test(groups={"smoke", "login"})
+        @Test(groups={"smoke", "debug"})
         public void VerifyFacebookLogin() {
             WebDriver driver = getDriver();
             WebDriverWait wait=new WebDriverWait(driver, 10);
@@ -106,7 +106,7 @@ public class DashboardLoginTest extends TestBase {
                 Thread.sleep(3000);
 
                 ArrayList<String> pops = new ArrayList<> (driver.getWindowHandles());
-                driver.switchTo().window(pops.get(1));
+                driver.switchTo().window(pops.get(0));
 
                 Thread.sleep(1000);
             } catch (Exception e) {

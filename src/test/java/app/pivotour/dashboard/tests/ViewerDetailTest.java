@@ -73,8 +73,8 @@ public class ViewerDetailTest extends TestBase {
         fail("Test Case Failed!");
     }
 }
-@Test(groups = {"VD"})
 
+    @Test(groups = {"VD"})
     public void DollhouseTest(){
 
         // /html/body/div[1]/div/section/main/div/div[5]/header/span[1]/span
