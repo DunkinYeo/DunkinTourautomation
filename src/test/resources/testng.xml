@@ -8,13 +8,13 @@
             <run>
                 <include name="abstract" />
                 <include name="GG" />
-                <exclude name="smoke"/>
-                <exclude name="ST"/>
-                <exclude name="profile"/>
-                <exclude name="VD"/>
+                <include name="smoke"/>
+                <include name="ST"/>
+                <include name="profile"/>
+                <include name="VD"/>
                 <exclude name="grid" />
-                <exclude name="login" />
-                <include name="debug" />
+                <include name="login" />
+                <exclude name="debug" />
             </run>
         </groups>
 

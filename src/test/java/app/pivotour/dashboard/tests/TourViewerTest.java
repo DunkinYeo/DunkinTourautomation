@@ -18,7 +18,7 @@ import static org.testng.Assert.*;
 public class TourViewerTest extends TestBase {
 
 
-    @Test(groups = {"debug", "GG"})
+    @Test(groups = {"smoke", "GG"})
     public void verifyTourViewerUI() {
         WebDriver driver = getDriver();
         //Go to Tour frontpage (login)
