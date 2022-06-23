@@ -38,7 +38,7 @@ public class LoginPage {
         //Click Login button
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span")).click();
         System.out.println("EMAIL CLICK");
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")).sendKeys("3iDev8593");
         System.out.println("PASSWORD");
