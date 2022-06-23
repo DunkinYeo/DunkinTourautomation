@@ -3,7 +3,6 @@ package app.pivotour.dashboard.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 

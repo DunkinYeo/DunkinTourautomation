@@ -2,6 +2,8 @@ package app.pivotour.dashboard.tests;
 
 import app.pivotour.dashboard.library.TestBase;
 import app.pivotour.dashboard.pages.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -39,10 +41,19 @@ public class TourViewerTest extends TestBase {
             SearchResultPage search = new SearchResultPage();
             WebElement tour = search.getTourByTitle(driver, "For Public Automation Testing");
             tour.click();
-            Thread.sleep(30000);
+            Thread.sleep(10000);
 
-            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-            driver.switchTo().window(tabs.get(1));
+//            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+//            driver.switchTo().window(tabs.get(1));
+
+            String originalWindow = driver.getWindowHandle();
+            //Loop through until we find a new window handle
+            for (String windowHandle : driver.getWindowHandles()) {
+                if(!originalWindow.contentEquals(windowHandle)) {
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
+            }
 
             TourViewerPage tourView = new TourViewerPage();
             String strTitle = tourView.getPageTitle(driver);
