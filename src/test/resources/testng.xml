@@ -7,14 +7,14 @@
         <groups>
             <run>
                 <include name="abstract" />
-                <include name="GG" />
-                <include name="smoke"/>
-                <include name="ST"/>
-                <include name="profile"/>
-                <include name="VD"/>
+                <exclude name="GG" />
+                <exclude name="smoke"/>
+                <exclude name="ST"/>
+                <exclude name="profile"/>
+                <exclude name="VD"/>
                 <exclude name="grid" />
                 <include name="login" />
-                <exclude name="debug" />
+                <include name="debug" />
             </run>
         </groups>
 

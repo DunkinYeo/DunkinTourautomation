@@ -25,6 +25,7 @@ public class LoginPage {
 
     public void GLogin(WebDriver driver) throws InterruptedException{
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.findElement(By.cssSelector("svg.google.social-icon")).click();
         Thread.sleep(5000);
         //password field;
@@ -33,14 +34,16 @@ public class LoginPage {
         driver.switchTo().window(pops.get(1));
 
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")).sendKeys("Test@3i.ai");
+        System.out.println("EMAIL");
         //Click Login button
-
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span")).click();
+        System.out.println("EMAIL CLICK");
         Thread.sleep(5000);
 
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")).sendKeys("3iDev8593");
+        System.out.println("PASSWORD");
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span")).click();
-
+        System.out.println("PW CLICK");
 
     }
 
