@@ -41,7 +41,7 @@ public class TourViewerTest extends TestBase {
             SearchResultPage search = new SearchResultPage();
             WebElement tour = search.getTourByTitle(driver, "For Public Automation Testing");
             tour.click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
 
 //            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
 //            driver.switchTo().window(tabs.get(1));
@@ -60,9 +60,9 @@ public class TourViewerTest extends TestBase {
             System.out.println(strTitle);
             assertTrue(strTitle.contains("For Public Automation Testing"));
 
-            String strTourName = tourView.getPageSource(driver);
+            /*String strTourName = tourView.getPageSource(driver);
             System.out.println(strTourName);
-            assertTrue(strTourName.contains("For Public Automation Testing"));
+            assertTrue(strTourName.contains("For Public Automation Testing"));*/
             //More asserts to be added below
 
             Thread.sleep(3000);
@@ -110,9 +110,9 @@ public class TourViewerTest extends TestBase {
 
             Thread.sleep(3000);
 
-            String strTourName = tourView.getPageSource(driver);
+            /*String strTourName = tourView.getPageSource(driver);
             System.out.println(strTourName);
-            assertTrue(strTourName.contains("For Private Automation Testing"));
+            assertTrue(strTourName.contains("For Private Automation Testing"));*/
 
             Thread.sleep(3000);
 
