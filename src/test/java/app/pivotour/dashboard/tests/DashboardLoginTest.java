@@ -61,7 +61,7 @@ public class DashboardLoginTest extends TestBase {
         }
     }
 
-    @Test(groups={"debug", "login"})
+    @Test(groups={"smoke", "login"})
     public void VerifyGoogleLogin() {
       WebDriver driver = getDriver();
         WebDriverWait wait=new WebDriverWait(driver, 10);
