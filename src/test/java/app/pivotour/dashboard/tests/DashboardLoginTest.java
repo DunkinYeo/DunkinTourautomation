@@ -86,7 +86,7 @@ public class DashboardLoginTest extends TestBase {
 
 
 
-    @Test(groups={"smoke", "debug"})
+    @Test(groups={"smoke", "login"})
     public void VerifyFacebookLogin() {
         WebDriver driver = getDriver();
         WebDriverWait wait=new WebDriverWait(driver, 10);
