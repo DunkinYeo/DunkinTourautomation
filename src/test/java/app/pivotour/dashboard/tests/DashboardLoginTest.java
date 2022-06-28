@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DashboardLoginTest extends TestBase {
 
-    @Test(groups = {"smoke", "login"})
+    @Test(groups = {"debug"})
     public void VerifyLogin() {
         WebDriver driver = getDriver();
         if (driver == null) {
@@ -61,80 +61,87 @@ public class DashboardLoginTest extends TestBase {
         }
     }
 
-    @Test(groups={"smoke", "login"})
-    public void VerifyGoogleLogin() {
-      WebDriver driver = getDriver();
-        WebDriverWait wait=new WebDriverWait(driver, 10);
 
-        //Go to Tour frontpage (login)
-        //driver.get(config.getString("BASEURL"));
-        //Page loding timeout (10s)
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        try {
-            //Input Email, Password and Click on Login button
-            LoginPage login = new LoginPage();
-            login.GLogin(driver);
-            Thread.sleep(3000);
+        @Test(groups={"smoke"})
+        public void VerifyGoogleLogin() {
+          WebDriver driver = getDriver();
+            WebDriverWait wait=new WebDriverWait(driver, 10);
 
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-            fail();
+            //Go to Tour frontpage (login)
+            //driver.get(config.getString("BASEURL"));
+            //Page loding timeout (10s)
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+            try {
+                //Input Email, Password and Click on Login button
+                LoginPage login = new LoginPage();
+                login.GLogin(driver);
+                Thread.sleep(3000);
+
+
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace(System.out);
+                fail();
+            }
         }
-    }
 
 
 
 
-    @Test(groups={"smoke", "login"})
-    public void VerifyFacebookLogin() {
-        WebDriver driver = getDriver();
-        WebDriverWait wait=new WebDriverWait(driver, 10);
-        //Go to Tour frontpage (login)
-        //driver.get(config.getString("BASEURL"));
-        //Page loding timeout (10s)
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        @Test(groups={"smoke"})
+        public void VerifyFacebookLogin() {
+            WebDriver driver = getDriver();
+            WebDriverWait wait=new WebDriverWait(driver, 10);
+            //Go to Tour frontpage (login)
+            //driver.get(config.getString("BASEURL"));
+            //Page loding timeout (10s)
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        try {
-            //Input Email, Password and Click on Login button
-            LoginPage login = new LoginPage();
-            login.Flogin(driver);
-            Thread.sleep(3000);
+            try {
+                //Input Email, Password and Click on Login button
+                LoginPage login = new LoginPage();
+                login.Flogin(driver);
+                Thread.sleep(3000);
 
-            ArrayList<String> pops = new ArrayList<> (driver.getWindowHandles());
-            driver.switchTo().window(pops.get(0));
+                ArrayList<String> pops = new ArrayList<> (driver.getWindowHandles());
+                driver.switchTo().window(pops.get(1));
 
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-            fail();
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace(System.out);
+                fail();
+            }
         }
-    }
 
-    @Test(groups = {"smoke", "login"})
-    public void VerifyAppleLogin() {
-        WebDriver driver = getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        //Go to Tour frontpage (login)
-        //driver.get(config.getString("BASEURL"));
-        //Page loding timeout (10s)
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        try {
-            //Input Email, Password and Click on Login button
-            LoginPage login = new LoginPage();
-            login.Alogin(driver);
-            Thread.sleep(3000);
 
-            ArrayList<String> pops = new ArrayList<>(driver.getWindowHandles());
-            driver.switchTo().window(pops.get(1));
+        @Test(groups = {"smoke"})
+        public void VerifyAppleLogin() {
+            WebDriver driver = getDriver();
+            WebDriverWait wait = new WebDriverWait(driver, 10);
 
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-            fail();
+            //Go to Tour frontpage (login)
+            //driver.get(config.getString("BASEURL"));
+            //Page loding timeout (10s)
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+            try {
+                //Input Email, Password and Click on Login button
+                LoginPage login = new LoginPage();
+                login.Alogin(driver);
+                Thread.sleep(3000);
+
+                ArrayList<String> pops = new ArrayList<>(driver.getWindowHandles());
+                driver.switchTo().window(pops.get(1));
+
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace(System.out);
+                fail();
+            }
         }
-    }
 
-}
+    }

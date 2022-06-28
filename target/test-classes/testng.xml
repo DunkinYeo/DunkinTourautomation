@@ -12,7 +12,8 @@
                 <include name="ST"/>
                 <include name="PF"/>
                 <include name="VD"/>
-                <exclude name="grid" />
+                <include name="grid" />
+                <include name="debug" />
             </run>
         </groups>
 

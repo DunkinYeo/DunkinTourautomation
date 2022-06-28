@@ -34,7 +34,6 @@ public class HeaderPage {
     }
 
 
-
     public void searchTour2(WebDriver driver, String keyword) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {

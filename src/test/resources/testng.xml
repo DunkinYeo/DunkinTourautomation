@@ -10,11 +10,10 @@
                 <include name="GG" />
                 <include name="smoke"/>
                 <include name="ST"/>
-                <include name="profile"/>
+                <include name="PF"/>
                 <include name="VD"/>
-                <exclude name="grid" />
-                <include name="login" />
-                <exclude name="debug" />
+                <include name="grid" />
+                <include name="debug" />
             </run>
         </groups>
 
