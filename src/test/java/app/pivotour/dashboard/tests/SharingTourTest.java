@@ -16,8 +16,7 @@ import static org.testng.Assert.*;
 
 public class SharingTourTest extends TestBase {
 
-    @Test(groups = {"ST"})
-
+    @Test(groups = {"smoke", "ST"})
     public void SharingTourTest() {
 
         WebDriver driver = getDriver();
@@ -61,8 +60,7 @@ public class SharingTourTest extends TestBase {
         }
     }
 
-    @Test(groups = {"ST"})
-
+    @Test(groups = {"smoke", "ST"})
     public void SharingTourTest2() {
         WebDriver driver = getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
