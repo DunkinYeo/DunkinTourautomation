@@ -16,12 +16,12 @@ import static org.testng.Assert.*;
 
 public class SharingTourTest extends TestBase {
 
-    @Test(groups = {"smoke","sharingtour"})
+    @Test(groups = {"ST"})
 
     public void SharingTourTest() {
 
         WebDriver driver = getDriver();
-        //WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //Go to Tour frontpage (login)
         //driver.get(config.getString("BASEURL"));
@@ -61,11 +61,11 @@ public class SharingTourTest extends TestBase {
         }
     }
 
-    @Test(groups = {"smoke","sharingtour"})
+    @Test(groups = {"ST"})
 
     public void SharingTourTest2() {
         WebDriver driver = getDriver();
-      //  WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //Go to Tour frontpage (login)
         //driver.get(config.getString("BASEURL"));

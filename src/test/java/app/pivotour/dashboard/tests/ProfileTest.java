@@ -19,8 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ProfileTest extends TestBase {
 
-    @Test(groups = {"PF"})
-
+    @Test(groups = {"profile"})
     public void OpenProfile() {
         WebDriver driver = getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -57,8 +56,7 @@ public class ProfileTest extends TestBase {
         }
     }
 
-    @Test(groups = {"PF"})
-
+    @Test(groups = {"profile"})
     public void ManageAccount () {
         WebDriver driver = getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -95,7 +93,7 @@ public class ProfileTest extends TestBase {
         }
     }
 
-    @Test(groups = {"PF"})
+    @Test(groups = {"profile"})
     public void LogOut () {
         WebDriver driver = getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
