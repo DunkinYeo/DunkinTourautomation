@@ -15,6 +15,7 @@ public class PublicTourPage   {
         //return driver.findElement(By.className("custom-header__title")).getText();
         return driver.findElement(By.xpath("//*[@id='app']/div/div[2]/div/div[1]/div[1]")).getText();
     }
+
     public void ClickShare (WebDriver driver)throws Exception{
 
         driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div[3]/div[2]/div/div[1]/div/div[2]/span/span/button")).click();

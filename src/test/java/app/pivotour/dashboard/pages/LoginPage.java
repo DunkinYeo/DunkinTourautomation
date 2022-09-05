@@ -18,7 +18,7 @@ public class LoginPage {
         //email field
         //driver.findElement(By.cssSelector("#app > div > div > div > form > div:nth-child(1) > div > div > input")).sendKeys("Test@3i.ai");
         driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("Test@3i.ai");
-        driver.findElement(By.xpath("/html/body/div[1]/div/div/div/form/div[2]/div/div[1]/input")).sendKeys("3iDev1234!");
+        driver.findElement(By.xpath("/html/body/div[1]/div/div/div/form/div[2]/div/div[1]/input")).sendKeys("3iDev8593");
         driver.findElement(By.xpath("/html/body/div[1]/div/div/div/form/button")).click();
 
     }
